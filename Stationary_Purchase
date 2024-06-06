@@ -32,20 +32,38 @@ Net Amount Payable is Rs.590.0
 int main() {
 
     /* Enter your code here. Read input from STDIN. Print output to STDOUT */ 
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */ 
     int q,p;
     scanf("%d%d",&q,&p);
-    int total;
     if(q>200){
-        total=p*q-p*q*20/100;
+        float dis=p*q*20/100;
+        float total=p*q-dis;
+        printf("Quantity Ordered %d",q);
+        printf("\nPrice per item is Rs.%d",p);
+        printf("\nTotal Amount = Rs.%d",p*q);
+        printf("\nDiscount Earned = Rs.%.1f",dis);
+        printf("\nAmount after Discount - Rs.%.1f",total);
+        float gst=total*18/100;
+        printf("\nGST - Rs.%.1f",gst);
+        printf("\nNet Amount Payable is Rs.%.1f",total+gst);
     }
     else{
-        total=p*q;
+       int total=p*q;
+        printf("Quantity Ordered %d",q);
+        printf("\nPrice per item is Rs.%d",p);
+        printf("\nTotal Amount = Rs.%d",total);
+        float gst=total*18/100;
+        printf("\nGST - Rs.%.1f",gst);
+        printf("\nNet Amount Payable is Rs.%.1f",total+gst);
     }
-    printf("Quantity Ordered %d",q);
-    printf("\nPrice per item is Rs.%d",p);
-    printf("\nTotal Amount = Rs.%d",total);
-    float gst=total*18/100;
-    printf("\nGST - Rs.%.1f",gst);
-    printf("\nNet Amount Payable is Rs.%.1f",total+gst);
+        return 0;
+}
         return 0;
 }
