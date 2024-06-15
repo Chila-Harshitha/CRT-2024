@@ -1,0 +1,44 @@
+#include <stdio.h>
+struct emp{
+    int empid;
+    char name[30];
+    float bsal,hra,da,pf,gross,net;
+}e;
+int main() {
+    // Write C code here
+    printf("\nEnter Employee Id:");
+    scanf("%d",&e.empid);
+    printf("\nEnter Employee Name:");
+    scanf("%s",e.name);
+    printf("\nEnter Employee's Basic Salary:");
+    scanf("%f",&e.bsal);
+    e.hra=e.bsal*15/100;
+    e.da=e.bsal*12/100;
+    e.pf=e.bsal*5/100;
+    e.gross=e.bsal+e.da+e.hra;
+    e.net=e.gross-e.pf;
+    printf("Employee ID             :%d\n",e.empid);
+    printf("Employee Name           :%s\n",e.name);
+    printf("Employee Basic salary   :%.2f\n",e.bsal);
+    printf("HRA                     :%.2f\n",e.hra);
+    printf("DA                      :%.2f\n",e.da);
+    printf("PF                      :%.2f\n",e.pf);
+    printf("Gross salary            :%.2f\n",e.gross);
+    printf("NET Salary              :%.2f\n",e.net);
+    return 0;
+}
+============================================================================================================
+Enter Employee Id:101
+
+Enter Employee Name:pavani
+
+Enter Employee's Basic Salary:39000.00
+Employee ID             :101
+Employee Name           :pavani
+Employee Basic salary   :39000.00
+HRA                     :5850.00
+DA                      :4680.00
+PF                      :1950.00
+Gross salary            :49530.00
+NET Salary              :47580.00
+
